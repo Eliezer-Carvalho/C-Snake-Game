@@ -18,20 +18,19 @@ while (1) {
     for (int i = 0; i < altura; i++) {
         for (int j = 0; j < largura; j ++) {
 
-            if (i == 0 || i == altura - 1) {
+            if (i == 0 || i == altura - 1) 
                 printf(" # "); /* EIXO DAS LINHAS */
-            }
-            else if (i == posicao_cobra_altura && j == posicao_cobra_largura) {
+            
+            else if (i == posicao_cobra_altura && j == posicao_cobra_largura) 
                 printf(" o "); /* POSIÇÃO INICIAL DA COBRA QUE É O CENTRO DO TABULEIRO */
-            }
+            
 
-            else if (j == 0 || j == largura - 1) {
+            else if (j == 0 || j == largura - 1) 
                 printf(" # "); /* EIXO DAS COLUNAS */
-            }
-            else {    
+            
+            else 
                 printf("   "); /* VAZIO DENTRO DA TABELA  */
-            }
-
+        
         }
         printf ("\n");
     }

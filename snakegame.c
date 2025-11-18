@@ -13,7 +13,7 @@ char tecla;
 while (1) {
 
     system("cls"); /* clear, limpa para receber um novo input todas as vezes*/
-
+    printf("Use W, A, S, D para mover a cobra! \n");
 
     for (int i = 0; i < altura; i++) {
         for (int j = 0; j < largura; j ++) {
@@ -35,7 +35,7 @@ while (1) {
         printf ("\n");
     }
 
-    printf("Use W, A, S, D para mover a cobra!");
+    
     tecla = getch();
 
     if (tecla == 'w') posicao_cobra_altura--;
@@ -44,10 +44,11 @@ while (1) {
     if (tecla == 'd') posicao_cobra_largura++;
     if (tecla == 'b') break;
 
-    if (posicao_cobra_altura == altura - 1 || posicao_cobra_largura == largura - 1) {
-        printf("Perdeu o jogo!");
-        break;
+    if (posicao_cobra_altura == 0 || posicao_cobra_altura == altura - 1 || posicao_cobra_largura == 0 || posicao_cobra_largura == largura - 1) {
+        printf("Terminou o jogo! :)");
+        break; 
     }
+
 }
 
 return 0;

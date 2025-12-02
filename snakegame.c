@@ -16,8 +16,8 @@ int posicao_cobra_largura = largura / 2;
 int pontos = 0;
 char tecla;
 srand(time(NULL));
-int food_x = (rand() % altura) +1;
-int food_y = (rand() % largura) +1;
+int food_x = 1 + rand() % (altura - 2);
+int food_y = 1 + rand() % (largura - 2);
 
 
 while (1) {
@@ -26,7 +26,7 @@ while (1) {
     system("cls"); /* clear, limpa para receber um novo input todas as vezes*/
     printf("Use W, A, S, D para mover a cobra! \n");
     printf("\n");
-
+    printf("ALTURA: %d | LARGURA: %d \n", food_x, food_y);
 
     for (int i = 0; i < altura; i++) 
     {
@@ -62,12 +62,11 @@ while (1) {
 
     if (posicao_cobra_altura == food_x && posicao_cobra_largura == food_y) 
     {
-        food_x = (rand() % altura) +1;
-        food_y = (rand() % largura) +1;
+        food_x = 1 + rand() % (altura - 2);
+        food_y = 1 + rand() % (largura - 2);
         pontos += 10;
     }
     
-    printf("ALTURA: %d | LARGURA: %d", food_x, food_y);
     
     if (posicao_cobra_altura == 0 || posicao_cobra_altura == altura - 1 || posicao_cobra_largura == 0 || posicao_cobra_largura == largura - 1) 
     {

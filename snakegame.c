@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
+#include <time.h>
+
+
+
+
 
 int main() {
 
@@ -8,17 +13,20 @@ const int altura = 11;
 const int largura = 21;
 int posicao_cobra_altura = altura / 2;
 int posicao_cobra_largura = largura / 2;
-int food_x = rand() % (largura - 2);
-int food_y = rand() % (altura - 2);
 int pontos = 0;
 char tecla;
+srand(time(NULL));
+int food_x = (rand() % altura);
+int food_y = (rand() % largura);
 
 
 while (1) {
 
+
     system("cls"); /* clear, limpa para receber um novo input todas as vezes*/
     printf("Use W, A, S, D para mover a cobra! \n");
     printf("\n");
+
 
     for (int i = 0; i < altura; i++) 
     {
@@ -54,8 +62,9 @@ while (1) {
 
     if (posicao_cobra_altura == food_x && posicao_cobra_largura == food_y) 
     {
-        //food_x = rand() % (largura - 2);
-        //food_y = rand() % (altura - 2);
+        food_x = (rand() % largura);
+        food_y = (rand() % altura);
+        printf ("%d %d", food_x, food_y);
         pontos += 10;
     }
 

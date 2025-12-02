@@ -8,9 +8,9 @@ const int altura = 11;
 const int largura = 21;
 int posicao_cobra_altura = altura / 2;
 int posicao_cobra_largura = largura / 2;
-int food_x = rand() % (largura + 1);
-int food_y = rand() % (altura + 1);
-int score;
+int food_x = rand() % (largura - 2);
+int food_y = rand() % (altura - 2);
+int pontos = 0;
 char tecla;
 
 
@@ -41,7 +41,7 @@ while (1) {
         printf ("\n");
     }
 
-    printf("SCORE: %d\n", score);
+    printf("SCORE: %d\n", pontos);
 
     tecla = getch();
 
@@ -51,14 +51,12 @@ while (1) {
     if (tecla == 'd') posicao_cobra_largura++;
     if (tecla == 'b') break;
 
-/*ERRO NA COMIDA
-ERRO NO SCORE*/
 
     if (posicao_cobra_altura == food_x && posicao_cobra_largura == food_y) 
     {
-        food_x = rand() % (largura + 1);
-        food_y = rand() % (altura + 1);
-        score = score + 10;
+        //food_x = rand() % (largura - 2);
+        //food_y = rand() % (altura - 2);
+        pontos += 10;
     }
 
     if (posicao_cobra_altura == 0 || posicao_cobra_altura == altura - 1 || posicao_cobra_largura == 0 || posicao_cobra_largura == largura - 1) 
@@ -66,6 +64,7 @@ ERRO NO SCORE*/
         printf("Terminou o jogo! :)");
         break; 
     }
+
 
 }
 
